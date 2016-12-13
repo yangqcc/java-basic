@@ -35,6 +35,7 @@ public class PrintNumber2 {
 								break;
 							}
 						}
+						condition2.signal();  //程序结束线程2可能还阻塞在那里
 					} finally {
 						lock.unlock();
 					}
@@ -63,6 +64,7 @@ public class PrintNumber2 {
 								break;
 							}
 						}
+						condition1.signal();
 					} finally {
 						lock.unlock();
 					}
