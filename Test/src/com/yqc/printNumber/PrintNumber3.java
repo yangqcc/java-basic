@@ -12,7 +12,7 @@ package com.yqc.printNumber;
 public class PrintNumber3 {
 
 	private static final int THREAD_NUMBER = 3;
-	private static final int MAX_NUMBER = 1300;
+	private static final int MAX_NUMBER = 1111;
 	private static final int RUN_TIMES = 5;
 	private static volatile int flag = 0;
 	private static volatile int state = MAX_NUMBER / RUN_TIMES + 1;
@@ -39,7 +39,7 @@ public class PrintNumber3 {
 	}
 
 	public static void main(String[] args) {
-		for (int i = 0; i < 3; i++) {
+		for (int i = 0; i < THREAD_NUMBER; i++) {
 			new Thread(new PrintNumber3.Task(i)).start();
 		}
 	}
