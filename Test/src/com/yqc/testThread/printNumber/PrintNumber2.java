@@ -1,4 +1,4 @@
-package com.yqc.printNumber;
+package com.yqc.testThread.printNumber;
 
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
