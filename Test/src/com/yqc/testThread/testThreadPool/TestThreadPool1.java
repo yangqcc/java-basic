@@ -1,4 +1,4 @@
-package com.yqc.testThreadPool;
+package com.yqc.testThread.testThreadPool;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

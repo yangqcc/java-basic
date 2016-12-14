@@ -5,7 +5,7 @@ import sun.misc.Unsafe;
 
 public class TestString {
 	private String string;
-	private int a=10;
+	private int a = 10;
 	static Unsafe unsafe;
 	static {
 		try {
@@ -29,7 +29,7 @@ public class TestString {
 		string = new String("123");
 		System.out.println(unsafe.objectFieldOffset(TestString.class.getDeclaredField("string")));
 		System.out.println(unsafe.objectFieldOffset(TestString.class.getDeclaredField("a")));
-		a=19999;
+		a = 19999;
 		System.out.println(unsafe.staticFieldOffset(TestString.class.getDeclaredField("a")));
 	}
 
