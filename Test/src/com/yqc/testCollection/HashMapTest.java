@@ -1,4 +1,4 @@
-package com.yqc.collection;
+package com.yqc.testCollection;
 
 import java.util.HashMap;
 import java.util.Iterator;

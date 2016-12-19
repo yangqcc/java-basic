@@ -1,4 +1,4 @@
-package com.yqc.CalculateNumber;
+package com.yqc.testThread.calculateNumber;
 
 /**
  * 四个线程a,b,c,d. 线程a,b对变量i加一. 线程c,d对变量i减去一.四个线程顺序执行, 每个线程每次只执行一次. i的初始值为0， 打印结果0
@@ -24,7 +24,7 @@ public class CalculateNumber {
 
 		@Override
 		public void run() {
-			while (true && state < MAX_COUNT)
+			while (state < MAX_COUNT)
 				if (state % THREAD_COUNT == id) {
 					if (id < SPLIT) {
 						number++;
