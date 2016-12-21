@@ -21,6 +21,7 @@ public class TestString {
 		}
 	}
 
+	@SuppressWarnings("all")
 	public void changeString(String s) throws NoSuchFieldException, SecurityException {
 		this.string = s;
 		System.out.println(unsafe.objectFieldOffset(TestString.class.getDeclaredField("string")));
