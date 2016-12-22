@@ -1,8 +1,9 @@
 package com.yqc.testThread.lock;
 
 /**
- * 1.对于实例同步方法，锁是当前实例对象。 2.对于静态同步方法，锁是当前对象的Class对象。
- * 3.对于同步方法块，锁是Synchonized括号里配置的对象。
+ * 1.对于实例同步方法,锁是当前实例对象.
+ * 2.对于静态同步方法,锁是当前对象的Class对象.
+ * 3.对于同步方法块,锁是Synchonized括号里配置的对象.
  * 
  * @author yangqc
  *
