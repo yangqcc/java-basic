@@ -28,7 +28,7 @@ public class Lambda {
     }
 
     public boolean isNull() {
-        return false;
+        return count == 0;
     }
 
     public static void main(String[] args) {
@@ -45,6 +45,6 @@ public class Lambda {
             }
             list.add(new Lambda(i));
         }
-        list.stream().filter(Lambda::isNull).collect(Collectors.toList()).forEach(System.out::print);
+        list.stream().filter(x -> x != null).filter(Lambda::isNull).collect(Collectors.toList()).forEach(System.out::print);
     }
 }
