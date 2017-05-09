@@ -1,3 +1,4 @@
+/*
 package thinkinjava.testJson;
 
 import java.text.SimpleDateFormat;
@@ -13,12 +14,14 @@ import net.sf.json.JSONObject;
 import net.sf.json.JsonConfig;
 import net.sf.json.processors.JsonValueProcessor;
 
+*/
 /**
  * @author zhang yanan
  * @createTime 2011-3-12 下午02:57:17
  * @desc Json处理java对象到json格式转换的日期处理类
  * 
- */
+ *//*
+
 public class JsonDateValueProcessor implements JsonValueProcessor {
 	private String datePattern = "yyyy-MM-dd HH:mm:ss";// 日期格式
 
@@ -100,3 +103,4 @@ public class JsonDateValueProcessor implements JsonValueProcessor {
 		
 	}
 }
+*/

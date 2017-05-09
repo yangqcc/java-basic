@@ -1,3 +1,4 @@
+/*
 package thinkinjava.testJson;
 
 import java.text.ParseException;
@@ -47,7 +48,7 @@ public class DateToJson implements JsonValueProcessor{
 	public static void main(String[] args) throws ParseException {
 		JsonConfig jsonConfig=new JsonConfig();
 		jsonConfig.registerJsonValueProcessor(Date.class, new DateToJson("yyyy-MM-dd HH:mm:ss"));
-//		JSONObject json=new JSONObject();
+		JSONObject json=new JSONObject();
 		String s="2019-12-10";
 		SimpleDateFormat format=new SimpleDateFormat("yyyy-MM-dd");
 		Date date=format.parse(s);
@@ -56,3 +57,4 @@ public class DateToJson implements JsonValueProcessor{
 		System.out.println(jsonObject.toString());
 	}
 }
+*/
