@@ -5,26 +5,27 @@ import java.util.LinkedHashSet;
 import java.util.Set;
 
 /**
- * LinedHashSet°´Ë³Ğò´æ´¢
- * 
- * @author yangqc 2016Äê12ÔÂ19ÈÕ
+ * LinedHashSetæŒ‰é¡ºåºå­˜å‚¨,å› ä¸ºLinkedHashSetå†…éƒ¨æ˜¯LinkedHashMap
+ * è€ŒHashSetå†…éƒ¨å°±æ˜¯HashMap
+ *
+ * @author yangqc 2016å¹´12æœˆ19æ—¥
  */
 public class TestLinkedHashSet {
-	public static void main(String[] args) {
-		Set<Integer> set = new LinkedHashSet<>();
-		for (int i = 0; i < 10; i++) {
-			set.add(10 - i);
-		}
-		for (Integer i : set) {
-			System.out.println(i);
-		}
-		System.out.println("ÏÂÃæÊÇHashSet");
-		Set<Integer> set2 = new HashSet<>();
-		for (int i = 0; i < 10; i++) {
-			set2.add(10 - i);
-		}
-		for (Integer i : set2) {
-			System.out.println(i);
-		}
-	}
+    public static void main(String[] args) {
+        Set<Integer> set = new LinkedHashSet<>();
+        for (int i = 0; i < 10; i++) {
+            set.add(10 - i);
+        }
+        for (Integer i : set) {
+            System.out.print(i + ",");
+        }
+        System.out.println("ä¸‹é¢æ˜¯HashSet");
+        Set<Integer> set2 = new HashSet<>();
+        for (int i = 0; i < 10; i++) {
+            set2.add(10 - i);
+        }
+        for (Integer i : set2) {
+            System.out.print(i + ",");
+        }
+    }
 }

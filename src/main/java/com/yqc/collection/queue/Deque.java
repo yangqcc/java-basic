@@ -2,7 +2,7 @@ package com.yqc.collection.queue;
 
 import java.util.LinkedList;
 /**
- * 使用LinkedList实现双向链表
+ * 浣跨敤LinkedList瀹炵幇鍙屽悜閾捐〃
  * @author yangqc
  *
  * @param <T>
