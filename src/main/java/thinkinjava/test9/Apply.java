@@ -39,5 +39,5 @@ class Splitter extends Processor{
 	}
 }
 class animalsss extends Apply{
-	
+
 }
