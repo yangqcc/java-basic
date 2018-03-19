@@ -1,4 +1,4 @@
-package com.yqc.oom;
+package jvm.oom;
 
 import java.util.ArrayList;
 import java.util.List;

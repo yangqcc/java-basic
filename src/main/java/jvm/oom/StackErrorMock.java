@@ -1,4 +1,4 @@
-package com.yqc.oom;
+package jvm.oom;
 
 /**
  * 2018/3/18
