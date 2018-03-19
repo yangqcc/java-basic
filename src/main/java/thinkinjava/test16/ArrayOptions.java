@@ -1,7 +1,7 @@
 package thinkinjava.test16;
 
 import java.util.Arrays;
-/*
+/**
  * 几种创建数组的对象的方式，记住，a[] v=new a[]{}这种方式表示创建了一个长度为0的数组对象
  * 1.对象数组中存储的是对象的引用
  * 2.基本类型数组中存放的是基本类型的数值
@@ -25,7 +25,7 @@ public class ArrayOptions {
 
 		a = new BerylliumSphere[] { new BerylliumSphere(),
 				new BerylliumSphere() };
-		
+
 //		for(int i=0;i<100;i++){
 //			e[i]=new BerylliumSphere();
 //		}

@@ -2,101 +2,96 @@
 package thinkinjava.testJson;
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Locale;
-import java.util.Map;
+import java.util.*;
 
 */
-/*
+/**
  * @author zhang yanan
- * @createTime 2011-3-12 ÏÂÎç02:57:17
- * @desc Json´¦Àíjava¶ÔÏóµ½json¸ñÊ½×ª»»µÄÈÕÆÚ´¦ÀíÀà
- * 
-*//*
+ * @createTime 2011-3-12 ï¿½ï¿½ï¿½ï¿½02:57:17
+ * @desc Jsonï¿½ï¿½ï¿½ï¿½javaï¿½ï¿½ï¿½ï¿½jsonï¿½ï¿½Ê½×ªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú´ï¿½ï¿½ï¿½ï¿½ï¿½
+ *//*
+
 
 
 public class JsonDateValueProcessor implements JsonValueProcessor {
-	private String datePattern = "yyyy-MM-dd HH:mm:ss";// ÈÕÆÚ¸ñÊ½
+    private String datePattern = "yyyy-MM-dd HH:mm:ss";// ï¿½ï¿½ï¿½Ú¸ï¿½Ê½
 
-	public JsonDateValueProcessor() {
-		super();
-	}
+    public JsonDateValueProcessor() {
+        super();
+    }
 
-	// ¹¹Ôìº¯Êý
-	public JsonDateValueProcessor(String format) {
-		super();
-		this.datePattern = format;
-	}
+    // ï¿½ï¿½ï¿½ìº¯ï¿½ï¿½
+    public JsonDateValueProcessor(String format) {
+        super();
+        this.datePattern = format;
+    }
 
-	public Object processArrayValue(Object value, JsonConfig jsonConfig) {
-		return process(value);
-	}
+    public Object processArrayValue(Object value, JsonConfig jsonConfig) {
+        return process(value);
+    }
 
-	public Object processObjectValue(String key, Object value,
-			JsonConfig jsonConfig) {
-		return process(value);
-	}
+    public Object processObjectValue(String key, Object value,
+                                     JsonConfig jsonConfig) {
+        return process(value);
+    }
 
-	private Object process(Object value) {
-		try {
-			if (value instanceof Date) {
-				SimpleDateFormat sdf = new SimpleDateFormat(datePattern,
-						Locale.UK);
-				return sdf.format((Date) value);
-			}
-			return value == null ? "" : value.toString();
-		} catch (Exception e) {
-			return "";
-		}
-	}
+    private Object process(Object value) {
+        try {
+            if (value instanceof Date) {
+                SimpleDateFormat sdf = new SimpleDateFormat(datePattern,
+                        Locale.UK);
+                return sdf.format((Date) value);
+            }
+            return value == null ? "" : value.toString();
+        } catch (Exception e) {
+            return "";
+        }
+    }
 
-	public String getDatePattern() {
-		return datePattern;
-	}
+    public String getDatePattern() {
+        return datePattern;
+    }
 
-	public void setDatePattern(String datePaterns) {
-		this.datePattern = datePaterns;
-	}
+    public void setDatePattern(String datePaterns) {
+        this.datePattern = datePaterns;
+    }
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-		ArrayList list = new ArrayList();
-		Users user = new Users();
-		user.setDate(new Date());
-		user.setName("qc");
-		list.add(user);
-		JsonConfig jsonConfig = new JsonConfig();
+        ArrayList list = new ArrayList();
+        Users user = new Users();
+        user.setDate(new Date());
+        user.setName("qc");
+        list.add(user);
+        JsonConfig jsonConfig = new JsonConfig();
 
-		// ÉèÖÃjavabeanÖÐÈÕÆÚ×ª»»Ê±µÄ¸ñÊ½
-		jsonConfig.registerJsonValueProcessor(Date.class,
-				new JsonDateValueProcessor("yyyy-MM-dd"));
-		// »ñÈ¡jsonÊý×é
-		JSONArray jsonArray = JSONArray.fromObject(user, jsonConfig);
-		JSONObject jsonObject=JSONObject.fromObject(user,jsonConfig);
-        String s=jsonArray.toString();
-        JSONObject jb=jsonArray.getJSONObject(0);
+        // ï¿½ï¿½ï¿½ï¿½javabeanï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½Ê±ï¿½Ä¸ï¿½Ê½
+        jsonConfig.registerJsonValueProcessor(Date.class,
+                new JsonDateValueProcessor("yyyy-MM-dd"));
+        // ï¿½ï¿½È¡jsonï¿½ï¿½ï¿½ï¿½
+        JSONArray jsonArray = JSONArray.fromObject(user, jsonConfig);
+        JSONObject jsonObject = JSONObject.fromObject(user, jsonConfig);
+        String s = jsonArray.toString();
+        JSONObject jb = jsonArray.getJSONObject(0);
         System.out.println(jb.get("date") instanceof Date);
 //        System.out.println(jb.get);
-        jb.put("hello", "ÄãºÃ");
+        jb.put("hello", "ï¿½ï¿½ï¿½");
         System.out.println(jb.toString());
-		System.out.println(jsonArray.toString());
-		System.out.println(jsonObject.toString());
-		
-		Map<String,String> strmap=new JSONObject();
-		Map<String,String> map=new HashMap<>();
-		map.put("aa", "aa");
-		map.put("bb", "aa");
-		map.put("cc", "aa");
-		map.put("dd", "aa");
-		List listt=new ArrayList();
-		listt.add(map);
-		JSONArray js=JSONArray.fromObject(listt);
-		JSONArray ppArray=JSONArray.fromObject(map);
-		System.out.println(js.toString());
-		
-	}
+        System.out.println(jsonArray.toString());
+        System.out.println(jsonObject.toString());
+
+        Map<String, String> strmap = new JSONObject();
+        Map<String, String> map = new HashMap<>();
+        map.put("aa", "aa");
+        map.put("bb", "aa");
+        map.put("cc", "aa");
+        map.put("dd", "aa");
+        List listt = new ArrayList();
+        listt.add(map);
+        JSONArray js = JSONArray.fromObject(listt);
+        JSONArray ppArray = JSONArray.fromObject(map);
+        System.out.println(js.toString());
+
+    }
 }
 */
