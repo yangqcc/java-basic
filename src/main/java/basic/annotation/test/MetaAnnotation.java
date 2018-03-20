@@ -1,5 +1,5 @@
 package basic.annotation.test;
 
-public @interface MetaAnnotion {
+public @interface MetaAnnotation {
 	String value();
 }

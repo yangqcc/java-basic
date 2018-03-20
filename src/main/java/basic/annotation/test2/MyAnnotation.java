@@ -6,9 +6,11 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 @Retention(RetentionPolicy.RUNTIME)
-@Target({ElementType.METHOD,ElementType.TYPE})
+@Target({ElementType.METHOD, ElementType.TYPE})
 public @interface MyAnnotation {
-	String color()  default "blue";
-	String value();
-	int[] arrayAttr() default {1,2};
+    String color() default "blue";
+
+    String value();
+
+    int[] arrayAttr() default {1, 2};
 }
