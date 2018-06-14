@@ -12,6 +12,7 @@ public class SlowMap<K, V> extends AbstractMap<K, V> {
 	private List<K> keys = new ArrayList<>();
 	private List<V> values = new ArrayList<>();
 
+	@Override
 	public V put(K key, V value) {
 		V oldValue = get(key);
 		if (!keys.contains(key)) {
@@ -23,6 +24,7 @@ public class SlowMap<K, V> extends AbstractMap<K, V> {
 		return oldValue;
 	}
 	
+	@Override
 	public V get(Object key){
 		if(!keys.contains(key)){
 			return null;

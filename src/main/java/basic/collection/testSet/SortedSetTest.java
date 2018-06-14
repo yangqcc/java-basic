@@ -10,7 +10,7 @@ import java.util.TreeSet;
  *
  * @author Administrator
  */
-public class SortedSetDemo {
+public class SortedSetTest {
     public static void main(String[] args) {
         SortedSet<String> sortedSet = new TreeSet<String>();
         Collections.addAll(sortedSet, "one two three four five six seven eigh".split(" "));

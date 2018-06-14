@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
 
-public class Lists {
+public class ListsTest {
     private static boolean b;
     private static String s;
     private static int i;

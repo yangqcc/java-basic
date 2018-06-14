@@ -4,7 +4,7 @@ import java.util.SortedSet;
 import java.util.TreeSet;
 
 /**
- * SortSet���Զ�����
+ * SortSet
  *
  * @author yangqc
  */

@@ -12,10 +12,12 @@ class SetType {
         i = n;
     }
 
+    @Override
     public boolean equals(Object o) {
         return o instanceof SetType && (i == ((SetType) o).i);
     }
 
+    @Override
     public String toString() {
         return Integer.toString(i);
     }
@@ -26,6 +28,7 @@ class HashType extends SetType {
         super(n);
     }
 
+    @Override
     public int hashCode() {
         return i;
     }
@@ -36,6 +39,7 @@ class TreeType extends SetType implements Comparable<TreeType> {
         super(n);
     }
 
+    @Override
     public int compareTo(TreeType arg) {
         return (arg.i < i ? -1 : (arg.i == i ? 0 : 1));
     }
