@@ -37,9 +37,9 @@ public class FileOperate {
     while ((line = br.readLine()) != null) {
       System.out.println(line);
       if (!line.contains("【")) {
-        if (arrays != null && arrays.length > 0) {
+        if (arrays != null) {
           for (String s : arrays) {
-            if (s != null && !s.equals("")) {
+            if (s != null && !"".equals(s)) {
               out.write(s + SPLIT);
             } else {
               out.write("不详" + SPLIT);
@@ -84,13 +84,13 @@ public class FileOperate {
    * 处理标题
    */
   private static String operateTitle(String content) {
-    String names = "";
+    StringBuilder names = new StringBuilder();
     String[] contents = content.split(":");
     for (int i = 1; i < contents.length; i++) {
-      names += contents[i] + ":";
+      names.append(contents[i]).append(":");
     }
-    names = names.substring(0, names.length() - 1);
-    return names;
+    names = new StringBuilder(names.substring(0, names.length() - 1));
+    return names.toString();
   }
 
   private static String operateAuthorCompany(String content) {
@@ -120,8 +120,7 @@ public class FileOperate {
   }
 
   /**
-   * 处理出处 数组第一个元素是期刊名称，数组第二个元素是年份
-   * 一共两个元素
+   * 处理出处 数组第一个元素是期刊名称，数组第二个元素是年份 一共两个元素
    */
   private static String[] operateSource(String content) {
     String[] arrays = content.split(":");
@@ -142,28 +141,28 @@ public class FileOperate {
   private static String getArea(String province) {
     if (province == null) {
       return "不详";
-    } else if (province.equals("上海") || province.equals("江苏") || province.equals("浙江") ||
-        province.equals("安徽") || province.equals("福建") || province.equals("江西") ||
-        province.equals("山东") || province.equals("台湾")
-        ) {
+    } else if ("上海".equals(province) || "江苏".equals(province) || "浙江".equals(province) ||
+        "安徽".equals(province) || "福建".equals(province) || "江西".equals(province) ||
+        "山东".equals(province) || "台湾".equals(province)
+    ) {
       return "华东";
-    } else if (province.equals("北京") || province.equals("天津") || province.equals("山西")
-        || province.equals("河北") || province.equals("内蒙古")) {
+    } else if ("北京".equals(province) || "天津".equals(province) || "山西".equals(province)
+        || "河北".equals(province) || "内蒙古".equals(province)) {
       return "华北";
-    } else if (province.equals("四川") || province.equals("贵州") || province.equals("云南") || province
-        .equals("重庆") || province.equals("西藏")) {
+    } else if ("四川".equals(province) || "贵州".equals(province) || "云南".equals(province) || "重庆"
+        .equals(province) || "西藏".equals(province)) {
       return "西南";
-    } else if (province.equals("陕西") || province.equals("甘肃") || province.equals("青海") || province
-        .equals("宁夏") || province.equals("新疆")) {
+    } else if ("陕西".equals(province) || "甘肃".equals(province) || "青海".equals(province) || "宁夏"
+        .equals(province) || "新疆".equals(province)) {
       return "西北";
-    } else if (province.equals("黑龙江") || province.equals("吉林") || province.equals("辽宁")) {
+    } else if ("黑龙江".equals(province) || "吉林".equals(province) || "辽宁".equals(province)) {
       return "东北";
-    } else if (province.equals("河南") || province.equals("湖北") || province.equals("湖南")) {
+    } else if ("河南".equals(province) || "湖北".equals(province) || "湖南".equals(province)) {
       return "华中";
-    } else if (province.equals("广东") || province.equals("广西") || province.equals("海南") || province
-        .equals("香港") || province.equals("澳门")) {
+    } else if ("广东".equals(province) || "广西".equals(province) || "海南".equals(province) || "香港"
+        .equals(province) || "澳门".equals(province)) {
       return "华南";
-    } else if (province.equals("不详")) {
+    } else if ("不详".equals(province)) {
       return "不详";
     } else {
       return "";
