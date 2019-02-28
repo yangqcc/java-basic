@@ -1,5 +1,7 @@
 package basic.collection.comparable;
 
+import java.util.ArrayList;
+
 public class Apple implements Comparable<Apple> {
 
     private int count;
@@ -32,5 +34,7 @@ public class Apple implements Comparable<Apple> {
         Apple apple1 = new Apple(1);
         Apple apple2 = new Apple(2);
         System.out.println(apple1.compareTo(apple2));
+        ArrayList list = new ArrayList();
+        list.remove(new Integer(1));
     }
 }
