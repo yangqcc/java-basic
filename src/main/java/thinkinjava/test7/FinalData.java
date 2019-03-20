@@ -10,6 +10,9 @@ class Value {
     }
 }
 
+/**
+ * @author yangqc
+ */
 public class FinalData {
     private static Random rand = new Random(47);
     private String id;
