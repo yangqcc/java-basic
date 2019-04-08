@@ -1,5 +1,8 @@
 package jvm.classloader;
 
+/**
+ * @author yangqc
+ */
 public class FileSystemLoaderTest {
     public static void main(String[] args) throws ClassNotFoundException {
         FileSystemClassLoader loader1 = new FileSystemClassLoader("/home/yangqc/IdeaProjects/java-basic");
@@ -22,6 +25,7 @@ public class FileSystemLoaderTest {
         Class<?> c5 = loader2.loadClass("JVMProcess.Demo");
         System.out.println(c5 + "-->" + c5.hashCode());
         //应用类加载器
-        System.out.println(c5.getClassLoader());//系统默认的类加载器
+        //系统默认的类加载器
+        System.out.println(c5.getClassLoader());
     }
 }

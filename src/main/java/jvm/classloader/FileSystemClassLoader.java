@@ -10,6 +10,8 @@ import java.io.*;
  * (3)如果父类没有装载，再调用本类加载器的findClass（…）方法，试图获取对应的字节码，如果获取得到，则调用defineClass（…）导入类型到方法区；
  * (4)如果获取不到对应的字节码或者其他原因失败，返回异常给loadclass（…）,loadclass（…）转抛异常，终止加载过程。
  * 2018/3/19
+ *
+ * @author yangqc
  */
 public class FileSystemClassLoader extends ClassLoader {
     //com.lgd.User    -->  d:/myjava/    com/lgd/User.class
@@ -19,20 +21,25 @@ public class FileSystemClassLoader extends ClassLoader {
         this.rootDir = rootDir;
     }
 
-    //重写方法
+    /**
+     * 重写方法
+     */
     @Override
     protected Class<?> findClass(String name) throws ClassNotFoundException {
-        Class<?> c = findLoadedClass(name);//查找已加载的类
+        //查找已加载的类
+        Class<?> c = findLoadedClass(name);
         //应该要先查询有没有加载过这个类。如果已经加载，不为空，则直接返回加载好的类。
         //如果没有，则加载新的类。
         if (c != null) {
             return c;
         } else {
             //获得他的父类，让父类去加载去加载
-            ClassLoader parent = this.getParent();  //获得appclassloader
+            //获得appclassloader
+            ClassLoader parent = this.getParent();
             //采用的是双亲委派机制
             try {
-                c = parent.loadClass(name);//委派给父类加载
+                //委派给父类加载
+                c = parent.loadClass(name);
             } catch (Exception e) {
                 e.printStackTrace();
             }
