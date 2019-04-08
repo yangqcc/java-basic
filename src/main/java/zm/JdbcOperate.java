@@ -66,12 +66,14 @@ public class JdbcOperate {
         for (String n : names) {
           pstmt.setString(1, new SimpleDateFormat("yyyy").format(modelClass.getDate()));
           pstmt.setString(2, modelClass.getTitle());
+          String address1 = modelClass.getAddress1();
+          String province = getProvince(address1);
+          System.out.println(address1);
           pstmt.setString(3, n);
           pstmt.setString(4, modelClass.getPeriodical());
-          pstmt.setString(5, modelClass.getRegion());
-          pstmt.setString(6, modelClass.getProvince());
-          String address1 = modelClass.getAddress1();
-          if (address1 != null && !address1.equals("")) {
+          pstmt.setString(5, getRegionEnglish(province));
+          pstmt.setString(6, getProvince(address1));
+         /* if (address1 != null && !address1.equals("")) {
             String[] split = address1.split(",");
             if (split.length > 1) {
               address1 = split[0];
@@ -88,7 +90,7 @@ public class JdbcOperate {
             if (split3.length > 1) {
               address1 = split3[1];
             }
-          }
+          }*/
           pstmt.setString(7, address1);
           pstmt.setString(8, modelClass.getAddress2());
           pstmt.setString(9, modelClass.getAddress3());
@@ -97,7 +99,7 @@ public class JdbcOperate {
           i++;
           if (i / 1000 == 0) {
             pstmt.executeBatch();
-            System.out.println("提交");
+            //  System.out.println("提交");
           }
         }
       }
@@ -110,17 +112,25 @@ public class JdbcOperate {
     return i;
   }
 
-  private static final String[] provinces = new String[]{"上海", "江苏", "浙江", "安徽", "福建", "江西", "山东",
-      "台湾"
+  private static final String[] provinces = new String[]{
+      "上海", "江苏", "浙江", "安徽", "福建", "江西", "山东", "台湾"
       , "北京", "天津", "山西", "河北", "内蒙古", "四川", "贵州", "云南", "重庆", "西藏", "陕西", "甘肃", "青海"
       , "宁夏", "新疆", "黑龙江", "湖北", "吉林", "辽宁", "河南", "湖南", "广西", "广东", "海南", "香港", "澳门"};
 
 
-  private static final String[] provincesEnglish = new String[]{};
+  private static final String[] provincesEnglish = new String[]
+      {"anhui", "beijing", "chongqing",
+          "fujian", "gansu", "guangdong",
+          "guangxi", "guizhou", "hainan", "hebei", "heilongjiang",
+          "henan", "hongkong", "hubei", "hunan", "jiangsu", "jiangxi", "jilin",
+          "liaoning", "macao", "qinghai", "shaanxi", "shandong", "shanghai", "shanxi",
+          "sichuan", "taiwan", "tianjin", "xinjiang", "yunnan", "zhejiang", "neimenggu", "xizang",
+          "ningxia"};
 
   private static String getProvince(String address) {
     if (address != null) {
-      for (String s : provinces) {
+      address = address.toLowerCase();
+      for (String s : provincesEnglish) {
         if (address.contains(s)) {
           return s;
         }
@@ -153,6 +163,47 @@ public class JdbcOperate {
       return "华中";
     } else if ("广东".equals(province) || "广西".equals(province) || "海南".equals(province) || "香港"
         .equals(province) || "澳门".equals(province)) {
+      return "华南";
+    } else if ("不详".equals(province)) {
+      return "不详";
+    } else {
+      return "";
+    }
+  }
+
+  /**
+   * 获取英文的省
+   */
+  private static String getRegionEnglish(String province) {
+    province = province.toLowerCase();
+    if (province == null) {
+      return "不详";
+    } else if (province.contains("shanghai") || province.contains("jiangsu") || province
+        .contains("zhejiang") ||
+        province.contains("anhui") || province.contains("fujian") || province.contains("jiangxi") ||
+        province.contains("shandong") || province.contains("taiwan")
+    ) {
+      return "华东";
+    } else if (province.contains("beijing") || "tianjin".equals(province) || "shanxi"
+        .equals(province)
+        || "hebei".equals(province) || "neimenggu".equals(province)) {
+      return "华北";
+    } else if ("sichuan".equals(province) || "guizhou".equals(province) || "yunnan".equals(province)
+        || "chongqing"
+        .equals(province) || "xizang".equals(province)) {
+      return "西南";
+    } else if ("shaanxi".equals(province) || "gansu".equals(province) || "qinghai".equals(province)
+        || "ningxia"
+        .equals(province) || "xinjiang".equals(province)) {
+      return "西北";
+    } else if ("heilongjiang".equals(province) || "jilin".equals(province) || "liaoning"
+        .equals(province)) {
+      return "东北";
+    } else if ("henan".equals(province) || "hubei".equals(province) || "hunan".equals(province)) {
+      return "华中";
+    } else if ("guangdong".equals(province) || "guangxi".equals(province) || "hainan".equals(province)
+        || "hongkong"
+        .equals(province) || "macao".equals(province)) {
       return "华南";
     } else if ("不详".equals(province)) {
       return "不详";
@@ -210,10 +261,10 @@ public class JdbcOperate {
   }
 
   public static void main(String[] args) {
-    String[] tables = new String[]{"cbm_author"};
+    String[] tables = new String[]{"eg"};
     Arrays.stream(tables).forEach(table -> {
       List<ModelClass> list = getAll(table);
-      insert(list, "cbm");
+      insert(list, "eg_copy");
     });
   }
 }
