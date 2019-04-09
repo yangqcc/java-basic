@@ -5,25 +5,28 @@ import java.util.Collection;
 import java.util.Iterator;
 
 /**
- * Iterator iterator ������������ר�ñ�����ʽ
+ * Iterator iterator 迭代器遍历
  * <p>
- * E next() ��ȡԪ�أ�������һ��Ԫ��
- * NoSuchElementException;û��������Ԫ��
+ * E next() 可能会抛出 NoSuchElementException;异常
  * <p>
- * boolean hasNext() �Ƿ�����һ��Ԫ��
- * 2015.10.8
+ * boolean hasNext() 判断是否还有下一个元素
+ *
+ * @author yangqc 2015.10.8
  */
 public class CollectionIterator {
-    public static void main(String[] args) {
-        Collection c = new ArrayList();
-        c.add("hello");
-        c.add("world");
-        c.add("java");
-        //Iterator iterator
-        Iterator it = c.iterator();//ʵ�ʷ��ص���������󣨶�̬��
-        while (it.hasNext()) {
-            System.out.println(it.next());//��ȡԪ�ز��ƶ�����һ��λ��
-        }
 
+  public static void main(String[] args) {
+    Collection<String> c = new ArrayList<>();
+    c.add("hello");
+    c.add("world");
+    c.add("java");
+    //Iterator iterator
+    //迭代器遍历
+    Iterator it = c.iterator();
+    while (it.hasNext()) {
+      //
+      System.out.println(it.next());
     }
+
+  }
 }
