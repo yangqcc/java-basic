@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Vector;
 
 /**
  * <p>title: ArrayList和LinkedList的区别</p>
@@ -40,6 +41,11 @@ public class ListTest {
     myArrayList.add(1);
     List<String> myLinkedList = new LinkedList<>();
 
+    //Vector是线程安全的
+    Vector<Integer> myVector = new Vector<>();
+    myVector.add(1);
+
     int i = Collections.binarySearch(myArrayList, 1);
+    System.out.println(i);
   }
 }
