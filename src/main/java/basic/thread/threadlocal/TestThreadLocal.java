@@ -1,4 +1,4 @@
-package basic.thread.testThreadLocal;
+package basic.thread.threadlocal;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

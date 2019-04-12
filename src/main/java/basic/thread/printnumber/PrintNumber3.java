@@ -1,4 +1,4 @@
-package basic.thread.printNumber;
+package basic.thread.printnumber;
 
 /**
  * ����3���̴߳�ӡ����������, �߳�1�ȴ�ӡ1,2,3,4,5, Ȼ�����߳�2��ӡ6,7,8,9,10, Ȼ�����߳�3��ӡ11,12,13,14,15.

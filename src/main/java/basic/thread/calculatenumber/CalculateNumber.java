@@ -1,4 +1,4 @@
-package basic.thread.calculateNumber;
+package basic.thread.calculatenumber;
 
 /**
  * �ĸ��߳�a,b,c,d. �߳�a,b�Ա���i��һ. �߳�c,d�Ա���i��ȥһ.�ĸ��߳�˳��ִ��, ÿ���߳�ÿ��ִֻ��һ��. i�ĳ�ʼֵΪ0��

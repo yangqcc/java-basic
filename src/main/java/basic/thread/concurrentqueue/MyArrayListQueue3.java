@@ -1,4 +1,4 @@
-package basic.thread.concurrentQueue;
+package basic.thread.concurrentqueue;
 
 import java.util.Arrays;
 import java.util.concurrent.ExecutorService;

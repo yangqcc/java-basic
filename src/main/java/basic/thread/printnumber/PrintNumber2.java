@@ -1,4 +1,4 @@
-package basic.thread.printNumber;
+package basic.thread.printnumber;
 
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;

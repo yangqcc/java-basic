@@ -1,4 +1,4 @@
-package basic.thread.concurrentQueue;
+package basic.thread.concurrentqueue;
 
 import java.util.Arrays;
 import java.util.concurrent.ExecutorService;
@@ -7,7 +7,7 @@ import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
- * ��ʵ����������
+ *  自定义队列
  *
  * @author yangqc 2016年12月20日
  */
