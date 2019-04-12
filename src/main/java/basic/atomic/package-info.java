@@ -1,4 +1,4 @@
-package atomic;
+package basic.atomic;
 
 /**
  * AtomicInteger 类小狐妖利用CAS (compare and swap)+volatile和native

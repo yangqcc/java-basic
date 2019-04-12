@@ -1,4 +1,4 @@
-package atomic;
+package basic.atomic;
 
 import java.util.concurrent.atomic.AtomicReference;
 

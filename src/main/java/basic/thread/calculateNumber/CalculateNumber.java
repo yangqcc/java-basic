@@ -1,45 +1,46 @@
 package basic.thread.calculateNumber;
 
 /**
- * �ĸ��߳�a,b,c,d. �߳�a,b�Ա���i��һ. �߳�c,d�Ա���i��ȥһ.�ĸ��߳�˳��ִ��, ÿ���߳�ÿ��ִֻ��һ��. i�ĳ�ʼֵΪ0�� ��ӡ���0
- * 1 2 1 0 1 2 1 0 1 2...
- * 
- * @author yangqc
+ * �ĸ��߳�a,b,c,d. �߳�a,b�Ա���i��һ. �߳�c,d�Ա���i��ȥһ.�ĸ��߳�˳��ִ��, ÿ���߳�ÿ��ִֻ��һ��. i�ĳ�ʼֵΪ0��
+ * ��ӡ���0 1 2 1 0 1 2 1 0 1 2...
  *
+ * @author yangqc
  */
 public class CalculateNumber {
-	private static volatile int number = 0;
-	private static volatile int state = 0;
-	private static final int THREAD_COUNT = 6;
-	private static final int MAX_COUNT = 150;
-	private static final int SPLIT = (THREAD_COUNT + 1) / 2;
 
-	static class Task implements Runnable {
+  private static volatile int number = 0;
+  private static volatile int state = 0;
+  private static final int THREAD_COUNT = 6;
+  private static final int MAX_COUNT = 150;
+  private static final int SPLIT = (THREAD_COUNT + 1) / 2;
 
-		private final int id;
+  static class Task implements Runnable {
 
-		public Task(int id) {
-			this.id = id;
-		}
+    private final int id;
 
-		@Override
-		public void run() {
-			while (state < MAX_COUNT)
-				if (state % THREAD_COUNT == id) {
-					if (id < SPLIT) {
-						number++;
-					} else {
-						number--;
-					}
-					System.out.println(Thread.currentThread().getName() + " * " + number);
-					state++;
-				}
-		}
-	}
+    public Task(int id) {
+      this.id = id;
+    }
 
-	public static void main(String[] args) {
-		for (int i = 0; i < THREAD_COUNT; i++) {
-			new Thread(new CalculateNumber.Task(i)).start();
-		}
-	}
+    @Override
+    public void run() {
+      while (state < MAX_COUNT) {
+        if (state % THREAD_COUNT == id) {
+          if (id < SPLIT) {
+            number++;
+          } else {
+            number--;
+          }
+          System.out.println(Thread.currentThread().getName() + " * " + number);
+          state++;
+        }
+      }
+    }
+  }
+
+  public static void main(String[] args) {
+    for (int i = 0; i < THREAD_COUNT; i++) {
+      new Thread(new CalculateNumber.Task(i)).start();
+    }
+  }
 }
