@@ -1,4 +1,4 @@
-package basic.io.arraylistandstream;
+package basic.io.ArrayListAndStream;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;

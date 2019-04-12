@@ -1,4 +1,4 @@
-package basic.innerclass;
+package basic.innerClass;
 
 /*
  * �����ڲ���������

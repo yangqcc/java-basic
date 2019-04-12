@@ -1,4 +1,4 @@
-package basic.innerclass;
+package basic.innerClass;
 /*
  * ������:
  *    Ҫ������շֱ����30,20,10.
