@@ -23,6 +23,7 @@ public class CollectionIterator {
     //Iterator iterator
     //迭代器遍历
     Iterator it = c.iterator();
+    //迭代器遍历
     while (it.hasNext()) {
       //
       System.out.println(it.next());
