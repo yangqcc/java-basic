@@ -3,11 +3,11 @@ package basic.system;
 /**
  * Created by yangqc on 2017/5/1.
  * <p>
- * getenv获取系统环境变量(window中,获取"环境变量"中"用户变量"和"系统变量"的值)
+ * getenv锟斤拷取系统锟斤拷锟斤拷锟斤拷锟斤拷(window锟斤拷,锟斤拷取"锟斤拷锟斤拷锟斤拷锟斤拷"锟斤拷"锟矫伙拷锟斤拷锟斤拷"锟斤拷"系统锟斤拷锟斤拷"锟斤拷值)
  */
 public class SystemGetenv {
 
-    public static void main(String[] args) {
-        System.out.println(System.getenv("path"));
-    }
+  public static void main(String[] args) {
+    System.out.println(System.getenv("path"));
+  }
 }

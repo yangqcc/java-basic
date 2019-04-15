@@ -1,5 +1,6 @@
 package designpattern.factory;
 
 public interface Sender {
-    void Send();
+
+  void Send();
 }

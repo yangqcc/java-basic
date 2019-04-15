@@ -1,4 +1,4 @@
-package basic.innerClass;
+package basic.innerclass;
 
 public class StudentTest3 {
 

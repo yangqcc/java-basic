@@ -9,11 +9,12 @@ import java.util.TreeSet;
  * @author yangqc
  */
 public class CharTreeSet {
-    public static void main(String[] args) {
-        SortedSet<String> sortSet = new TreeSet<>();
-        sortSet.add("tt");
-        sortSet.add("aa");
-        sortSet.add("iii");
-        System.out.println(sortSet);
-    }
+
+  public static void main(String[] args) {
+    SortedSet<String> sortSet = new TreeSet<>();
+    sortSet.add("tt");
+    sortSet.add("aa");
+    sortSet.add("iii");
+    System.out.println(sortSet);
+  }
 }

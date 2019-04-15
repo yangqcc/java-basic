@@ -1,15 +1,14 @@
 package designpattern.singleton;
 
 /**
- * 枚举类实现单利模式
- * 2018/3/19
+ * 枚举类实现单利模式 2018/3/19
  */
 enum SingletonDemo2 {
-    INSTANCE("this is new instance!");
+  INSTANCE("this is new instance!");
 
-    private String name;
+  private String name;
 
-    SingletonDemo2(String name) {
-        this.name = name;
-    }
+  SingletonDemo2(String name) {
+    this.name = name;
+  }
 }

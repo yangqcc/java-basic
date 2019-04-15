@@ -1,4 +1,4 @@
-package basic.innerClass;
+package basic.innerclass;
 
 /*
  * �����ڲ���������
@@ -12,26 +12,29 @@ package basic.innerClass;
  *   Ҫ�����̨�����Hello World��;
  */
 interface Interr {
-	void show();
+
+  void show();
 }
 
 class Outer8 {
-	public static Interr method() {
-		// �������--��������
-		return new Interr() {
-			public void show() {
-				System.out.println("Hello World!");
-			}
-		};
-	}
+
+  public static Interr method() {
+    // �������--��������
+    return new Interr() {
+      public void show() {
+        System.out.println("Hello World!");
+      }
+    };
+  }
 }
 
 public class InnerClassDemo8 {
-	public static void main(String[] args) {
-		Outer8.method().show();
-	}
-	/*
-	 * 1.method()Ӧ����Outer8�еľ�̬���� 2.Outer.method().show() ���Կ�����������ķ���ֵ��һ������
-	 * �����ڽӿ�Interֻ�ܹ���һ��show����������method�����ķ���ֵ������һ�� �ӿ�
-	 */
+
+  public static void main(String[] args) {
+    Outer8.method().show();
+  }
+  /*
+   * 1.method()Ӧ����Outer8�еľ�̬���� 2.Outer.method().show() ���Կ�����������ķ���ֵ��һ������
+   * �����ڽӿ�Interֻ�ܹ���һ��show����������method�����ķ���ֵ������һ�� �ӿ�
+   */
 }

@@ -4,31 +4,32 @@ package jvm.reference;
  * @author yangqc
  */
 public class Car {
-    private double price;
-    private String colour;
 
-    public Car(double price, String colour) {
-        this.price = price;
-        this.colour = colour;
-    }
+  private double price;
+  private String colour;
 
-    public double getPrice() {
-        return price;
-    }
+  public Car(double price, String colour) {
+    this.price = price;
+    this.colour = colour;
+  }
 
-    public void setPrice(double price) {
-        this.price = price;
-    }
+  public double getPrice() {
+    return price;
+  }
 
-    public String getColour() {
-        return colour;
-    }
+  public void setPrice(double price) {
+    this.price = price;
+  }
 
-    public void setColour(String colour) {
-        this.colour = colour;
-    }
+  public String getColour() {
+    return colour;
+  }
 
-    public String toString() {
-        return colour + "car costs $" + price;
-    }
+  public void setColour(String colour) {
+    this.colour = colour;
+  }
+
+  public String toString() {
+    return colour + "car costs $" + price;
+  }
 }

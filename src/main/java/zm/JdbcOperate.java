@@ -201,7 +201,8 @@ public class JdbcOperate {
       return "东北";
     } else if ("henan".equals(province) || "hubei".equals(province) || "hunan".equals(province)) {
       return "华中";
-    } else if ("guangdong".equals(province) || "guangxi".equals(province) || "hainan".equals(province)
+    } else if ("guangdong".equals(province) || "guangxi".equals(province) || "hainan"
+        .equals(province)
         || "hongkong"
         .equals(province) || "macao".equals(province)) {
       return "华南";

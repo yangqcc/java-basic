@@ -7,21 +7,14 @@ import java.util.concurrent.atomic.AtomicInteger;
  * <p>description:
  * AtomicInteger源码：
  *
- * //Unsafe类
- * private static final Unsafe unsafe = Unsafe.getUnsafe();
+ * //Unsafe类 private static final Unsafe unsafe = Unsafe.getUnsafe();
  *
- * //值的偏移量
- * private static final long valueOffset;
+ * //值的偏移量 private static final long valueOffset;
  *
- *     static {
- *         try {
- *             valueOffset = unsafe.objectFieldOffset
- *                 (AtomicInteger.class.getDeclaredField("value"));
- *         } catch (Exception ex) { throw new Error(ex); }
- *     }
+ * static { try { valueOffset = unsafe.objectFieldOffset (AtomicInteger.class.getDeclaredField("value"));
+ * } catch (Exception ex) { throw new Error(ex); } }
  *
- * //用volatile来保证值的可见性
- * private volatile int value;
+ * //用volatile来保证值的可见性 private volatile int value;
  *
  * </p>
  *

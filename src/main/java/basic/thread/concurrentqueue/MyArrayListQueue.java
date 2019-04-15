@@ -7,7 +7,7 @@ import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
- *  自定义队列
+ * 自定义队列
  *
  * @author yangqc 2016年12月20日
  */

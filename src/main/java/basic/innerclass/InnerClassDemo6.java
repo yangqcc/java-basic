@@ -1,4 +1,4 @@
-package basic.innerClass;
+package basic.innerclass;
 
 /*
  * �����ڲ���
@@ -11,26 +11,29 @@ package basic.innerClass;
  *   ������һ���̳��˸������ʵ���˸ýӿڵ��������������
  */
 public class InnerClassDemo6 {
-	public static void main(String[] args) {
-		Outer5 o = new Outer5();
-		o.method();
-	}
+
+  public static void main(String[] args) {
+    Outer5 o = new Outer5();
+    o.method();
+  }
 }
 
 interface Inter {
-	public abstract void show();
 
-	public abstract void show2();
+  public abstract void show();
+
+  public abstract void show2();
 }
 
 class Outer5 {
-	public void method() {
-		// һ��������ʱ��
-		/*
-		 * new Inter(){ public void show(){ System.out.println("show"); }
-		 * }.show();
-		 */
-		// ����������ʱ��
+
+  public void method() {
+    // һ��������ʱ��
+    /*
+     * new Inter(){ public void show(){ System.out.println("show"); }
+     * }.show();
+     */
+    // ����������ʱ��
 		/*
 		new Inter() {
 			public void show() {
@@ -51,17 +54,18 @@ class Outer5 {
 			}
 		}.show();
 		*/
-		//����кܶ෽�����ͺ��鷳
-		//�Ľ�����
-		Inter i=new Inter(){
-			public void show(){
-				System.out.println("show");
-			}
-			public void show2(){
-				System.out.println("show2");
-			}
-		};
-		i.show();
-		i.show2();
-	}
+    //����кܶ෽�����ͺ��鷳
+    //�Ľ�����
+    Inter i = new Inter() {
+      public void show() {
+        System.out.println("show");
+      }
+
+      public void show2() {
+        System.out.println("show2");
+      }
+    };
+    i.show();
+    i.show2();
+  }
 }

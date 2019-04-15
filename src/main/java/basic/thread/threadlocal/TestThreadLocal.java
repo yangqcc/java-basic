@@ -10,6 +10,8 @@ import java.util.concurrent.Executors;
  *
  * public T get() { Thread t = Thread.currentThread(); ThreadLocalMap map = getMap(t); if (map !=
  * null) { ThreadLocalMap.Entry e = map.getEntry(this); if (e != null) {
+ *
+ * @author yangqc
  * @SuppressWarnings("unchecked") T result = (T)e.value; return result; } } return
  * setInitialValue(); }
  *
@@ -17,8 +19,6 @@ import java.util.concurrent.Executors;
  * private T setInitialValue() { T value = initialValue(); Thread t = Thread.currentThread();
  * ThreadLocalMap map = getMap(t); if (map != null) map.set(this, value); else createMap(t, value);
  * return value; }
- *
- * @author yangqc
  */
 public class TestThreadLocal {
 

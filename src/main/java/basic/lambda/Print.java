@@ -5,5 +5,5 @@ package basic.lambda;
  */
 public interface Print<T> {
 
-    void print(T x);
+  void print(T x);
 }

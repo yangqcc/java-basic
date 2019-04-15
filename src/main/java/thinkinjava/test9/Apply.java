@@ -3,47 +3,52 @@ package thinkinjava.test9;
 import java.util.Arrays;
 
 public class Apply {
-    public static void process(Processor p, Object s) {
-        System.out.println("Using Processor " + p.name());
-        System.out.println(p.process(s));
-    }
 
-    public static String s = "Sisagreement with beliefs is by definition oncorrect";
+  public static void process(Processor p, Object s) {
+    System.out.println("Using Processor " + p.name());
+    System.out.println(p.process(s));
+  }
 
-    public static void main(String[] args) {
-        process(new Upcase(), s);
-        process(new Downcase(), s);
-        process(new Splitter(), s);
-    }
+  public static String s = "Sisagreement with beliefs is by definition oncorrect";
+
+  public static void main(String[] args) {
+    process(new Upcase(), s);
+    process(new Downcase(), s);
+    process(new Splitter(), s);
+  }
 }
 
 class Processor {
-    public String name() {
-        return getClass().getSimpleName();
-    }
 
-    Object process(Object input) {
-        return input;
-    }
+  public String name() {
+    return getClass().getSimpleName();
+  }
+
+  Object process(Object input) {
+    return input;
+  }
 }
 
 class Upcase extends Processor {
-    @Override
-    String process(Object input) {
-        return ((String) input).toUpperCase();
-    }
+
+  @Override
+  String process(Object input) {
+    return ((String) input).toUpperCase();
+  }
 }
 
 class Downcase extends Processor {
-    String process(Object input) {
-        return ((String) input).toLowerCase();
-    }
+
+  String process(Object input) {
+    return ((String) input).toLowerCase();
+  }
 }
 
 class Splitter extends Processor {
-    String process(Object input) {
-        return Arrays.toString(((String) input).split(" "));//ÕâÖÖ·½Ê½¿ÉÒÔ½«Ò»¸ö×Ö·û´®Éú³ÉÒ»¸ö×Ö·û´®Êý×é
-    }
+
+  String process(Object input) {
+    return Arrays.toString(((String) input).split(" "));//ï¿½ï¿½ï¿½Ö·ï¿½Ê½ï¿½ï¿½ï¿½Ô½ï¿½Ò»ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+  }
 }
 
 class animalsss extends Apply {

@@ -1,44 +1,45 @@
 package basic.collection.queue;
 
 import java.util.LinkedList;
+
 /**
  * 使用LinkedList实现双向链表
- * @author yangqc
  *
- * @param <T>
+ * @author yangqc
  */
 public class Deque<T> {
-	private LinkedList<T> deque = new LinkedList<T>();
 
-	public void addFirst(T e) {
-		deque.addFirst(e);
-	}
+  private LinkedList<T> deque = new LinkedList<T>();
 
-	public void addList(T e) {
-		deque.addLast(e);
-	}
+  public void addFirst(T e) {
+    deque.addFirst(e);
+  }
 
-	public T getFirst() {
-		return deque.getFirst();
-	}
+  public void addList(T e) {
+    deque.addLast(e);
+  }
 
-	public T getLast() {
-		return deque.getLast();
-	}
+  public T getFirst() {
+    return deque.getFirst();
+  }
 
-	public T removeFirst() {
-		return deque.removeFirst();
-	}
+  public T getLast() {
+    return deque.getLast();
+  }
 
-	public T removeLast() {
-		return deque.removeLast();
-	}
+  public T removeFirst() {
+    return deque.removeFirst();
+  }
 
-	public int size() {
-		return deque.size();
-	}
+  public T removeLast() {
+    return deque.removeLast();
+  }
 
-	public String toString() {
-		return deque.toString();
-	}
+  public int size() {
+    return deque.size();
+  }
+
+  public String toString() {
+    return deque.toString();
+  }
 }

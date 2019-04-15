@@ -1,27 +1,28 @@
 package thinkinjava.test9;
 /**
- * ³õ²½ÕýÔò±í´ïÊ½
+ * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê½
  */
 
 import java.util.Arrays;
 
 public class Splitting {
-    public static String knights = "Then, when you have found the" +
-            " shrubbery, you must " + "cut down the mightiest tree in the" +
-            "forest... " + "with... a herring!";
-    public static String s1 = "Java now has regular expressions";
 
-    public static void split(String expression, String regex) {
-        System.out.println(Arrays.toString(expression.split(regex)));
-    }
+  public static String knights = "Then, when you have found the" +
+      " shrubbery, you must " + "cut down the mightiest tree in the" +
+      "forest... " + "with... a herring!";
+  public static String s1 = "Java now has regular expressions";
 
-    public static void main(String[] args) {
-        split(knights, " ");//ÒÔ¿Õ¸ñÀ´»®·Ö×Ö·û
-        split(knights, "\\W+");//ÒÔ·Çµ¥´Ê×Ö·û»®·Ö£¬½«±êµãÉ¾³ýÁË
-        split(knights, "n\\W+");//×ÖÄ¸nºóÃæ¸ú×ÅÒ»¸ö»ò¶à¸ö·Çµ¥´Ê×Ö·û
-        split(s1, "^Java");
-        split(s1, "s?");
-        split(s1, "s+");
-        split(s1, "s*\"d");
-    }
+  public static void split(String expression, String regex) {
+    System.out.println(Arrays.toString(expression.split(regex)));
+  }
+
+  public static void main(String[] args) {
+    split(knights, " ");//ï¿½Ô¿Õ¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½
+    split(knights, "\\W+");//ï¿½Ô·Çµï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½Ö£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É¾ï¿½ï¿½ï¿½ï¿½
+    split(knights, "n\\W+");//ï¿½ï¿½Ä¸nï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Çµï¿½ï¿½ï¿½ï¿½Ö·ï¿½
+    split(s1, "^Java");
+    split(s1, "s?");
+    split(s1, "s+");
+    split(s1, "s*\"d");
+  }
 }
