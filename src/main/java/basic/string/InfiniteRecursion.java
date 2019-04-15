@@ -3,13 +3,17 @@ package basic.string;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author yangqc
+ */
 public class InfiniteRecursion {
 
+  @Override
   public String toString() {
     return " InfiniteRecursion address: " + super.toString() + "\n";
   }
 
-  /*
+  /**
    * ��ӡ��ַ������this����,������ݹ���ã���Ӧ����Object��toString������
    * �������඼�Ǽ̳���Object�࣬������super.toString()
    *
