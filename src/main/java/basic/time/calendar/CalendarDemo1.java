@@ -2,10 +2,12 @@ package basic.time.calendar;
 
 import java.util.Calendar;
 
-/*
+/**
  * public void add(int field,int amount);���������������ֶκͶ�Ӧ��ʱ�䣬���Ե�ǰ�������в���
  *
  * public final void set(int year,int month,int date)
+ *
+ * @author yangqc
  */
 public class CalendarDemo1 {
 

@@ -2,15 +2,17 @@ package basic.time.date;
 
 import java.util.Date;
 
-/*
- * public long getTime() ��ȡʱ�䣬�Ժ���Ϊ��λ
- * public void setTime(long time) ����ʱ��
+/**
+ * public long getTime() 获取毫秒
+ * public void setTime(long time) 设置毫秒时间
  *
  * ��Date�õ�����ֵ
  *
  * �Ѻ���ֵת��ΪDate
  *
  * 2015.10.6
+ *
+ * @author yangqc
  */
 public class DateDemo2 {
 

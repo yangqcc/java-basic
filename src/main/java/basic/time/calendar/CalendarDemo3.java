@@ -3,15 +3,13 @@ package basic.time.calendar;
 import java.util.Calendar;
 import java.util.Scanner;
 
-/*
- * ��ȡ����һ������ж�����
- * ����
- * ����¼���������
- * �������������������
+/**
+ * ��ȡ����һ������ж����� ���� ����¼��������� �������������������
  *
  *
  * 2015.10.7
  *
+ * @author yangqc
  */
 public class CalendarDemo3 {
 

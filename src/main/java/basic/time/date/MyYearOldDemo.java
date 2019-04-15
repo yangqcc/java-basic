@@ -5,16 +5,14 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
 
-/*
+/**
  * ��һ�����������������
  *
- * ¼��������
- * �Ѹ��ַ���ת��Ϊһ������
- * ͨ�������ڵõ�һ������ֵ
- * ��ȡ��ǰʱ�����ֵ
- * �Ѻ���ֵת��Ϊ��
+ * ¼�������� �Ѹ��ַ���ת��Ϊһ������ ͨ�������ڵõ�һ������ֵ ��ȡ��ǰʱ�����ֵ �Ѻ���ֵת��Ϊ��
  *
  * 2015.10.7
+ *
+ * @author yangqc
  */
 public class MyYearOldDemo {
 

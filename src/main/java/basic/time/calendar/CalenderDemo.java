@@ -2,12 +2,13 @@ package basic.time.calendar;
 
 import java.util.Calendar;
 
-/*
+/**
  * Calendar
  *
- * public int get(int field)���ظ��������ֶε�ֵ
- * �������е�ÿ���ֶζ��Ǿ�̬�ĳ�Ա���������Ҷ���int����
+ * public int get(int field)���ظ��������ֶε�ֵ �������е�ÿ���ֶζ��Ǿ�̬�ĳ�Ա���������Ҷ���int����
  * 2015.10.7
+ *
+ * @author yangqc
  */
 public class CalenderDemo {
 

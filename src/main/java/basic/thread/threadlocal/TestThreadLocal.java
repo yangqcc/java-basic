@@ -36,11 +36,7 @@ class MyTask implements Runnable {
   private ThreadLocal<Integer> currentValue;
 
   MyTask(final int initValue) {
-    currentValue = new ThreadLocal<Integer>() {
-      protected Integer initialValue() {
-        return initValue;
-      }
-    };
+    currentValue = ThreadLocal.withInitial(() -> initValue);
   }
 
   @Override

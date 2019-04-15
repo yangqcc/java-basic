@@ -4,25 +4,24 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-/*
- * ���ں��ַ����໥ת���Ĺ�����
+/**
+ * 时间转换
+ *
+ * @author yangqc
  */
 public class DateUtil {
 
   private DateUtil() {
   }
 
-  ;
-
   public static String dateToString(Date d, String format) {
-//		SimpleDateFormat sdf=new SimpleDateFormat(format);
     return new SimpleDateFormat(format).format(d);
   }
 
   /**
-   * @param date ���������ַ���
-   * @param format ���ݹ�����Ҫ��ת���ĸ�ʽ
-   * @return ����������ڶ���
+   * @param date 字符串类型时间
+   * @param format 日期格式
+   * @return Date类型时间
    */
   public static Date stringToDate(String date, String format) throws ParseException {
     return new SimpleDateFormat(format).parse(date);

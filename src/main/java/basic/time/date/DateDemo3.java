@@ -4,7 +4,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-/*
+/**
  * ���ڸ�ʽ��
  * Date----String
  *   public final String format(Date date)
@@ -19,6 +19,7 @@ import java.util.Date;
  * SimpleDateFormat(String pattern)����ģʽ
  *
  * 2015.10.7
+ * @author yangqc
  */
 public class DateDemo3 {
 

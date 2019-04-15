@@ -1,5 +1,7 @@
 package basic.thread.lock;
 
+import java.util.concurrent.locks.ReentrantLock;
+
 /**
  * 1.����ʵ��ͬ������,���ǵ�ǰʵ������. 2.���ھ�̬ͬ������,���ǵ�ǰ�����Class����.
  * 3.����ͬ��������,����Synchonized���������õĶ���.
@@ -8,6 +10,7 @@ package basic.thread.lock;
  */
 public class LockObject {
 
+  private static ReentrantLock lock = new ReentrantLock();
   private static volatile int a = 0;
 
   synchronized static int get() throws InterruptedException {
@@ -20,25 +23,17 @@ public class LockObject {
   }
 
   public static void main(String[] args) {
-    Runnable task1 = new Runnable() {
-
-      @Override
-      public void run() {
-        try {
-          System.out.println(LockObject.get());
-        } catch (InterruptedException e) {
-          System.out.println("fuck,interrupted!");
-        }
+    Runnable task1 = () -> {
+      try {
+        System.out.println(LockObject.get());
+      } catch (InterruptedException e) {
+        System.out.println("fuck,interrupted!");
       }
     };
 
-    Runnable task2 = new Runnable() {
-
-      @Override
-      public void run() {
-        LockObject.put(12);
-        System.out.println("completed");
-      }
+    Runnable task2 = () -> {
+      LockObject.put(12);
+      System.out.println("completed");
     };
 
     // new Thread(task1).start();
