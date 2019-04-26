@@ -1,22 +1,25 @@
 package designpattern.singleton;
 
+/**
+ * @author yangqc
+ */
 public class Singleton3 {
 
-  private static Singleton3 instance = null;
+    private static Singleton3 instance = null;
 
-  private Singleton3() {
-  }
-
-  private static synchronized void syncInit() {
-    if (instance == null) {
-      instance = new Singleton3();
+    private Singleton3() {
     }
-  }
 
-  public static Singleton3 getInstance() {
-    if (instance == null) {
-      syncInit();
+    private static synchronized void syncInit() {
+        if (instance == null) {
+            instance = new Singleton3();
+        }
     }
-    return instance;
-  }
+
+    public static Singleton3 getInstance() {
+        if (instance == null) {
+            syncInit();
+        }
+        return instance;
+    }
 }
