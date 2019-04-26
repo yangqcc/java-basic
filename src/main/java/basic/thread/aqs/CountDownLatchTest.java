@@ -49,6 +49,7 @@ public class CountDownLatchTest {
                     e.printStackTrace();
                 } finally {
                     countDownLatch.countDown();
+                    System.out.println("嘻嘻!");
                 }
             });
         }
