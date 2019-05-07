@@ -8,31 +8,33 @@ import java.util.concurrent.Executors;
  */
 public class TestThreadPool1 {
 
-  private volatile static int i = 0;
+    private volatile static int i = 0;
 
-  public static void main(String[] args) {
-    Runnable task = () -> {
-      while (true) {
-        try {
-          if (Thread.interrupted()) {
-            System.out.println("interrupted!");
-          }
-          if (i++ == 10000) {
-            break;
-          }
-          Thread.sleep(1000);
-          System.out.println("xixi");
-        } catch (InterruptedException e) {
-          System.out.println("异常");
-        }
-      }
-    };
+    public static void main(String[] args) {
+        Runnable task = () -> {
+            while (true) {
+                try {
+                    if (Thread.interrupted()) {
+                        System.out.println("interrupted!");
+                    }
+                    if (i++ == 10000) {
+                        break;
+                    }
+                    Thread.sleep(1000);
+                    System.out.println("xixi");
+                } catch (InterruptedException e) {
+                    System.out.println("异常");
+                }
+            }
+        };
 
-    /**
-     * 最好手动创建线程池
-     */
-    ExecutorService exec = Executors.newCachedThreadPool();
-    exec.execute(task);
-    exec.shutdown();
-  }
+        /**
+         * 最好手动创建线程池
+         */
+        ExecutorService exec = Executors.newCachedThreadPool();
+        ExecutorService executorService = Executors.newScheduledThreadPool(2);
+        executorService.submit(() -> 1);
+        exec.execute(task);
+        exec.shutdown();
+    }
 }
