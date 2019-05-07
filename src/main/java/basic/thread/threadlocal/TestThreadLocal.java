@@ -37,22 +37,29 @@ public class TestThreadLocal {
 
     public static void main(String[] args) {
         ExecutorService exec = Executors.newCachedThreadPool();
-        exec.execute(new MyTask(1));
-        exec.execute(new MyTask(2));
-        exec.execute(new MyTask(3));
-        exec.execute(new MyTask(4));
+        ThreadLocal<Integer> threadLocal = new ThreadLocal<>();
+        exec.execute(() -> new MyTask(1, threadLocal).run());
+        exec.execute(() -> new MyTask(2, threadLocal).run());
+        exec.execute(() -> new MyTask(3, threadLocal).run());
+        exec.execute(() -> new MyTask(4, threadLocal).run());
     }
 }
 
-class MyTask implements Runnable {
+class MyTask {
 
     private ThreadLocal<Integer> currentValue;
 
-    MyTask(final int initValue) {
-        currentValue = ThreadLocal.withInitial(() -> initValue);
+    /**
+     * 如果没有调用set()方法，然后就调用了get()方法，那么这个作为初始化值,
+     *
+     * @param initValue
+     */
+    MyTask(final int initValue, ThreadLocal<Integer> threadLocal) {
+        currentValue = threadLocal;
+        //调用set()方法,那么则不会再去调用withInitial()方法获取默认值
+        threadLocal.set(initValue);
     }
 
-    @Override
     public void run() {
         while (true) {
             try {
