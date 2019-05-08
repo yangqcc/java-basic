@@ -2,6 +2,7 @@ package basic.thread.threadlocal;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * ThreadLocal����һ��ThreadLocalMap,ThreadLocalMap�������һ���������,
@@ -37,24 +38,26 @@ public class TestThreadLocal {
 
     public static void main(String[] args) {
         ExecutorService exec = Executors.newCachedThreadPool();
-        ThreadLocal<Integer> threadLocal = new ThreadLocal<>();
-        exec.execute(() -> new MyTask(1, threadLocal).run());
-        exec.execute(() -> new MyTask(2, threadLocal).run());
-        exec.execute(() -> new MyTask(3, threadLocal).run());
-        exec.execute(() -> new MyTask(4, threadLocal).run());
+        //初始化值
+        ThreadLocal threadLocal = ThreadLocal.withInitial(() -> new AtomicInteger(1));
+        AtomicInteger atomicInteger = new AtomicInteger(1);
+        exec.execute(() -> new MyTask(atomicInteger, threadLocal).run());
+        exec.execute(() -> new MyTask(atomicInteger, threadLocal).run());
+        exec.execute(() -> new MyTask(atomicInteger, threadLocal).run());
+        exec.execute(() -> new MyTask(atomicInteger, threadLocal).run());
     }
 }
 
 class MyTask {
 
-    private ThreadLocal<Integer> currentValue;
+    private ThreadLocal<AtomicInteger> currentValue;
 
     /**
      * 如果没有调用set()方法，然后就调用了get()方法，那么这个作为初始化值,
      *
      * @param initValue
      */
-    MyTask(final int initValue, ThreadLocal<Integer> threadLocal) {
+    MyTask(final AtomicInteger initValue, ThreadLocal<AtomicInteger> threadLocal) {
         currentValue = threadLocal;
         //调用set()方法,那么则不会再去调用withInitial()方法获取默认值
         threadLocal.set(initValue);
@@ -68,7 +71,7 @@ class MyTask {
                 break;
             }
             System.out.println(Thread.currentThread().getName() + " : " + currentValue.get());
-            currentValue.set(currentValue.get() + 1);
+            currentValue.get().getAndAdd(1);
         }
     }
 }
