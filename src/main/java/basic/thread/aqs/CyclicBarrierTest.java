@@ -12,7 +12,8 @@ import java.util.concurrent.*;
  * <p>
  * CyclicBarrier 的应用场景
  * <p>
- * CyclicBarrier 可以用于多线程计算数据，最后合并计算结果的应用场景。比如我们用一个Excel保存了用户所有银行流水， 每个Sheet保存一个帐户近一年的每笔银行流水，现在需要统计用户的日均银行流水，
+ * CyclicBarrier 可以用于多线程计算数据，最后合并计算结果的应用场景。比如我们用一个Excel保存了用户所有银行流水，
+ * 每个Sheet保存一个帐户近一年的每笔银行流水，现在需要统计用户的日均银行流水，
  * 先用多线程处理每个sheet里的银行流水，都执行完之后，得到每个sheet的日均银行流水，最后，再用barrierAction用这些线程的计算结果，计算出整个Excel的日均银行流水。
  * </p>
  *
@@ -48,8 +49,7 @@ public class CyclicBarrierTest {
     }
 
     public static void test2() throws InterruptedException {
-        CyclicBarrier cyclicBarrier = new CyclicBarrier(5, () ->
-        {
+        CyclicBarrier cyclicBarrier = new CyclicBarrier(5, () -> {
             try {
                 Thread.sleep(1000);
                 System.out.println("线程到达数量后，优先执行!");

@@ -1,5 +1,6 @@
 package basic.thread.queue;
 
+import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.LinkedBlockingDeque;
 
 /**
@@ -15,6 +16,9 @@ public class LinkedListQueueTest {
     public static void main(String[] args) {
         LinkedBlockingDeque<User> linkedBlockingDeque = new LinkedBlockingDeque<>(2);
         linkedBlockingDeque.add(new User("qicheng", 12));
+
+        ArrayBlockingQueue<User> arrayBlockingQueue = new ArrayBlockingQueue<>(2);
+        arrayBlockingQueue.add(new User("qicheng", 12));
     }
 }
 
