@@ -1,4 +1,4 @@
-package basic.atomic;
+package basic.thread.atomic;
 
 /**
  * AtomicInteger 类小狐妖利用CAS (compare and swap)+volatile和native 方法来保证原子操作，从而避免synchronized的高开小，执行效率大为提升

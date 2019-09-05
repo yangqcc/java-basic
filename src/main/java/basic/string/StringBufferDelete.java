@@ -1,7 +1,9 @@
 package basic.string;
 
 /**
- * StringBuffer public StringBuffer deleteCharAt(int index) public StringBuffer delete(int start,int
+ * StringBuffer
+ * public StringBuffer deleteCharAt(int index)
+ * public StringBuffer delete(int start,int
  * end)
  *
  * @author yangqc

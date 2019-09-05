@@ -3,7 +3,7 @@ package basic;
 /**
  * equals�������ᴦ������ת������ ��װ�����==�ڲ������������������²����Զ�����
  *
- * @author yangqc 2016��12��20��
+ * @author yangqc 2016.12.20
  */
 public class TestInteger {
 

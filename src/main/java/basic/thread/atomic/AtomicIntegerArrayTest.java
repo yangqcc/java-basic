@@ -1,4 +1,4 @@
-package basic.atomic;
+package basic.thread.atomic;
 
 import java.util.concurrent.atomic.AtomicIntegerArray;
 

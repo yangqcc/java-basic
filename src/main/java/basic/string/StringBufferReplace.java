@@ -1,6 +1,6 @@
 package basic.string;
 
-/*
+/**
  * StringBuffer��ת����
  *   public StringBuffer reverse()
  *
