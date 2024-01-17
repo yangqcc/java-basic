@@ -38,7 +38,7 @@ public class TestVolatile {
 	}
 
 	public static void main(String[] args) throws InterruptedException {
-		TestVolatile testVolatile = new TestVolatile();
+		final TestVolatile testVolatile = new TestVolatile();
 		Runnable task1 = new Runnable() {
 			@Override
 			public void run() {

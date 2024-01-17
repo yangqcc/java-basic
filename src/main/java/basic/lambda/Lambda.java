@@ -2,6 +2,7 @@ package basic.lambda;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -32,7 +33,7 @@ public class Lambda {
     }
 
     public static void main(String[] args) {
-        PrintString("test", (x) -> System.out.println(x));
+        PrintString("test", System.out::println);
         Function<String, String> lambda = String::toUpperCase;
         Lambda lambda1 = new Lambda();
         Function<Character, Character> characterCharacterFunction = lambda1::toUpperCase;
@@ -45,6 +46,6 @@ public class Lambda {
             }
             list.add(new Lambda(i));
         }
-        list.stream().filter(x -> x != null).filter(Lambda::isNull).collect(Collectors.toList()).forEach(System.out::print);
+        list.stream().filter(Objects::nonNull).filter(Lambda::isNull).collect(Collectors.toList()).forEach(System.out::print);
     }
 }

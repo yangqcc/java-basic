@@ -71,7 +71,7 @@ public class MyArrayListQueue<T> {
 	}
 
 	public static void main(String[] args) {
-		MyArrayListQueue<Integer> queue = new MyArrayListQueue<>(3);
+		final MyArrayListQueue<Integer> queue = new MyArrayListQueue<>(3);
 		Runnable putTask = new Runnable() {
 
 			@Override
