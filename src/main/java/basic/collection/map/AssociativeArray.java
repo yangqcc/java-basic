@@ -9,7 +9,7 @@ package basic.collection.map;
  * @param <V>
  */
 public class AssociativeArray<K, V> {
-	private Object[][] pairs;
+	private final Object[][] pairs;
 	private int index;
 
 	public AssociativeArray(int length) {

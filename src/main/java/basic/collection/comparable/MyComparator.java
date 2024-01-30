@@ -27,7 +27,7 @@ public class MyComparator implements Comparator<Apple> {
 		for (int i = 0; i < 10; i++) {
 			appleList.add(new Apple(10 - i));
 		}
-		Collections.sort(appleList, myComparator);
+		appleList.sort(myComparator);
 		System.out.println(Arrays.toString(appleList.toArray()));
 	}
 

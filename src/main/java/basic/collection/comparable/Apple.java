@@ -2,7 +2,7 @@ package basic.collection.comparable;
 
 public class Apple implements Comparable<Apple> {
 
-	private int count;
+	private final int count;
 
 	public Apple(int count) {
 		this.count = count;
@@ -10,13 +10,7 @@ public class Apple implements Comparable<Apple> {
 
 	@Override
 	public int compareTo(Apple apple) {
-		if (apple.getCount() < count) {
-			return -1;
-		} else if (apple.getCount() > count) {
-			return 1;
-		} else {
-			return 0;
-		}
+		return Integer.compare(apple.getCount(), count);
 	}
 
 	public int getCount() {
@@ -24,7 +18,7 @@ public class Apple implements Comparable<Apple> {
 	}
 
 	public String toString() {
-		return new Integer(getCount()).toString();
+		return Integer.toString(getCount());
 	}
 
 	public static void main(String[] args) {
