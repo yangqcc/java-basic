@@ -1,4 +1,4 @@
-package basic.collection.map;
+package basic.collection.testMap;
 
 import java.lang.reflect.InvocationTargetException;
 

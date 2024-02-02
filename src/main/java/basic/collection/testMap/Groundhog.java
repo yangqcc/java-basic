@@ -1,0 +1,19 @@
+package basic.collection.testMap;
+
+/**
+ * Object��ɢ�����ǰ���ַ���ɵ�
+ *
+ * @author yangqc 2016.6.14
+ */
+public class Groundhog {
+
+  protected int number;
+
+  public Groundhog(int n) {
+    number = n;
+  }
+
+  public String toString() {
+    return "Groundhog #" + number;
+  }
+}

@@ -1,4 +1,4 @@
-package basic.collection;
+package basic.collection.testMap;
 
 import java.util.Iterator;
 import java.util.LinkedHashMap;

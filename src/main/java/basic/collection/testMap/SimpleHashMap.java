@@ -1,10 +1,9 @@
-package basic.collection.map;
+package basic.collection.testMap;
 
 import java.util.AbstractMap;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.ListIterator;
-import java.util.Map;
 import java.util.Set;
 
 public class SimpleHashMap<K, V> extends AbstractMap<K, V> {

@@ -1,4 +1,4 @@
-package basic.collection.queue;
+package basic.collection.testQueue;
 
 public abstract class DequeTest {
     static void fillTest(Deque<Integer> deque) {

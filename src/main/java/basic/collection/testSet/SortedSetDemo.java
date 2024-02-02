@@ -13,7 +13,7 @@ import java.util.TreeSet;
 public class SortedSetDemo {
 
   public static void main(String[] args) {
-    SortedSet<String> sortedSet = new TreeSet<String>();
+    SortedSet<String> sortedSet = new TreeSet<>();
     Collections.addAll(sortedSet, "one two three four five six seven eight".split(" "));
     System.out.println(sortedSet);
     String low = sortedSet.first();

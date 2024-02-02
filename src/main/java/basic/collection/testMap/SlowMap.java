@@ -1,11 +1,10 @@
-package basic.collection.map;
+package basic.collection.testMap;
 
 import java.util.AbstractMap;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 
 public class SlowMap<K, V> extends AbstractMap<K, V> {

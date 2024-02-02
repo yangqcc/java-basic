@@ -1,4 +1,4 @@
-package basic.collection.queue;
+package basic.collection.testQueue;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.Queue;

@@ -1,4 +1,4 @@
-package basic.collection;
+package basic.collection.testMap;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -23,10 +23,7 @@ public class MyLinkedHashMap<K, V> extends LinkedHashMap<K, V> {
 
     @Override
     protected boolean removeEldestEntry(Map.Entry<K, V> eldest) {
-        if (keySet().size() > 10) {
-            return true;
-        }
-        return false;
+      return keySet().size() > 10;
     }
 
     public static void main(String[] args) {
