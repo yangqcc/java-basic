@@ -1,10 +1,15 @@
 package jvm.classloader.load;
 
+/**
+ * @author yangqc
+ */
 public class LoadClass {
 
     public static void test() {
-        System.out.println(ClassLoader.getSystemClassLoader());//应用类加载器
-        System.out.println(ClassLoader.getSystemClassLoader().getParent());//扩展类加载器
+        //应用类加载器
+        System.out.println(ClassLoader.getSystemClassLoader());
+        //扩展类加载器
+        System.out.println(ClassLoader.getSystemClassLoader().getParent());
         //引导类加载器  JAVA_HOME/jre/lib/rt.jar
         System.out.println(ClassLoader.getSystemClassLoader().getParent().getParent());
 

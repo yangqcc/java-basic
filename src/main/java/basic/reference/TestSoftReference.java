@@ -5,32 +5,32 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * ²âÊÔSoftReference
- * ÔÚÄÚ´æ½«Òª±»·ÖÅäÍêÊ±,¿ªÊ¼»ØÊÕSoftReference,Èç¹ûÄÚ´æ»¹²»¹»ÓÃ£¬ÄÇÃ´Å×³öOutOfMemoryError
+ * æµ‹è¯•SoftReference åœ¨å†…å­˜å°†è¦è¢«åˆ†é…å®Œæ—¶,å¼€å§‹å›æ”¶SoftReference,å¦‚æœå†…å­˜è¿˜ä¸å¤Ÿç”¨ï¼Œé‚£ä¹ˆæŠ›å‡ºOutOfMemoryError
  *
- * @author yangqc 2016Äê12ÔÂ21ÈÕ
+ * @author yangqc 2016å¹´12æœˆ21æ—¥
  */
 public class TestSoftReference {
-    public static void main(String[] args) {
-        int[] mb = new int[1024 * 1024 * 10];
-        List<int[]> list = new ArrayList<>();
-        Car car = new Car(123, "benz");
-        SoftReference<Car> softCar = new SoftReference<>(car);
-        int i = 0;
-        while (true) {
-            list.add(new int[1024 * 1024 * 10]);
-            i++;
-            if (softCar.get() != null) {
-                System.out.println("softCar is alive!");
-            } else {
-                System.out.println("softCar is dead!");
-                System.out.println(car == softCar.get());
+
+  public static void main(String[] args) {
+    int[] mb = new int[1024 * 1024 * 10];
+    List<int[]> list = new ArrayList<>();
+    Car car = new Car(123, "benz");
+    SoftReference<Car> softCar = new SoftReference<>(car);
+    int i = 0;
+    while (true) {
+      list.add(new int[1024 * 1024 * 10]);
+      i++;
+      if (softCar.get() != null) {
+        System.out.println("softCar is alive!");
+      } else {
+        System.out.println("softCar is dead!");
+        System.out.println(car == softCar.get());
 //				break;
-            }
-            if (i == 10) {
-                car = null;
-                System.gc();
-            }
-        }
+      }
+      if (i == 10) {
+        car = null;
+        System.gc();
+      }
     }
+  }
 }

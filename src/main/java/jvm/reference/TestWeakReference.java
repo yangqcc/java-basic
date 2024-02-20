@@ -8,9 +8,10 @@ import java.lang.ref.WeakReference;
  * @author yangqc
  */
 public class TestWeakReference {
+
     public static void main(String[] args) {
         Car car = new Car(22000, "silver");
-        WeakReference weakCar = new WeakReference(car);
+        WeakReference<Car> weakCar = new WeakReference<>(car);
         int i = 0;
         while (true) {
             if (weakCar.get() != null) {

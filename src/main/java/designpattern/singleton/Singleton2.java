@@ -1,8 +1,9 @@
 package designpattern.singleton;
 
 /**
- * 饱汉模式
- * 2018/3/19
+ * 饱汉模式 2018/3/19
+ *
+ * @author yangqc
  */
 public class Singleton2 {
 

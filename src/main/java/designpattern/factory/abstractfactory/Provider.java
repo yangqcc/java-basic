@@ -3,7 +3,14 @@ package designpattern.factory.abstractfactory;
 
 import designpattern.factory.Sender;
 
+/**
+ * @author yangqc
+ */
 public interface Provider {
-    public Sender produce();
+
+    /**
+     * @return
+     */
+    Sender produce();
 }
 

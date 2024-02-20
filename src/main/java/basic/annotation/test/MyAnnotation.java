@@ -8,13 +8,14 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME) //注解使用时间点
 @Target({ElementType.METHOD, ElementType.TYPE}) //注解使用位置
 public @interface MyAnnotation {
-    String color() default "blue";
 
-    String value(); //值
+  String color() default "blue";
 
-    int[] arrayAttr() default {1, 2, 3};
+  String value(); //值
 
-    MetaAnnotation annotationAttr() default @MetaAnnotation("hello");
+  int[] arrayAttr() default {1, 2, 3};
 
-    Class a();
+  MetaAnnotation annotationAttr() default @MetaAnnotation("hello");
+
+  Class a();
 }

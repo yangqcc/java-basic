@@ -1,17 +1,11 @@
 package basic.generic;
 
-import java.lang.reflect.Constructor;
-import java.lang.reflect.InvocationTargetException;
-import java.util.ArrayList;
-import java.util.HashMap;
-
 /**
  * ����ȥ���ͻ�
- * 
+ *
  * 2015.10.20
- * 
+ *
  * @author Administrator
- * 
  */
 public class GenericTestDemo {
 //	public static void main(String[] args) throws NoSuchMethodException,

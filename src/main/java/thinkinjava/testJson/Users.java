@@ -3,23 +3,24 @@ package thinkinjava.testJson;
 import java.util.Date;
 
 public class Users {
-    private Date date;
-    private String name;
 
-    public Date getDate() {
-        return date;
-    }
+  private Date date;
+  private String name;
 
-    public void setDate(Date date) {
-        this.date = date;
-    }
+  public Date getDate() {
+    return date;
+  }
 
-    public String getName() {
-        return name;
-    }
+  public void setDate(Date date) {
+    this.date = date;
+  }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
 
 }

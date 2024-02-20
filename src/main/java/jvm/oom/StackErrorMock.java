@@ -2,13 +2,17 @@ package jvm.oom;
 
 /**
  * 2018/3/18
+ *
+ * @author yangqc
  */
 public class StackErrorMock {
 
     private static int index = 1;
 
-    //超过堆栈的请求深度
-    public void call() {
+    /**
+     * 超过堆栈的请求深度
+     */
+    private void call() {
         index++;
         call();
     }

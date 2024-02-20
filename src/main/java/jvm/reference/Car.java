@@ -4,6 +4,7 @@ package jvm.reference;
  * @author yangqc
  */
 public class Car {
+
     private double price;
     private String colour;
 
@@ -28,6 +29,7 @@ public class Car {
         this.colour = colour;
     }
 
+    @Override
     public String toString() {
         return colour + "car costs $" + price;
     }

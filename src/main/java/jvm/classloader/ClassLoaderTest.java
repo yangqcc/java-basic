@@ -4,10 +4,12 @@ import java.io.IOException;
 import java.io.InputStream;
 
 /**
- * 自定义ClassLoader加载当前包下的.class文件
- * 2018/3/18
+ * 自定义ClassLoader加载当前包下的.class文件 2018/3/18
+ *
+ * @author yangqc
  */
 public class ClassLoaderTest {
+
     public static void main(String[] args) throws ClassNotFoundException, IllegalAccessException, InstantiationException {
         ClassLoader myLoader = new ClassLoader() {
             @Override

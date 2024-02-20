@@ -4,18 +4,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Test1 {
-    public static void main(String[] args) {
-        String[] s1 = {"asc", "ccs", "cscs", "asc", "ccs", "sss"};
-        boolean[] b1 = new boolean[s1.length];
-        List<?> list = new ArrayList<>();
-        for (int i = 0; i < s1.length; i++) {
-            int t;
-            do {
-                t = i;
-            }
-            while (b1[t]);//É¸Ñ¡²»ÖØ¸´µÄÔªËØ
+
+  public static void main(String[] args) {
+    String[] s1 = {"asc", "ccs", "cscs", "asc", "ccs", "sss"};
+    boolean[] b1 = new boolean[s1.length];
+    List<?> list = new ArrayList<>();
+    for (int i = 0; i < s1.length; i++) {
+      int t;
+      do {
+        t = i;
+      }
+      while (b1[t]);//É¸Ñ¡ï¿½ï¿½ï¿½Ø¸ï¿½ï¿½ï¿½Ôªï¿½ï¿½
 ////			[i]=FLAVORS[t];
 //			picked[t]=true;
-        }
     }
+  }
 }

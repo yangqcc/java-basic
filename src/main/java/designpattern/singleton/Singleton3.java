@@ -1,6 +1,10 @@
 package designpattern.singleton;
 
+/**
+ * @author yangqc
+ */
 public class Singleton3 {
+
     private static Singleton3 instance = null;
 
     private Singleton3() {

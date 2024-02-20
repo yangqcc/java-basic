@@ -1,74 +1,77 @@
 package thinkinjava.test14;
 
 public class Person {
-    public final String first;
-    public final String last;
-    public final String address;
 
-    public Person(String first, String last, String address) {
-        this.first = first;
-        this.last = last;
-        this.address = address;
+  public final String first;
+  public final String last;
+  public final String address;
+
+  public Person(String first, String last, String address) {
+    this.first = first;
+    this.last = last;
+    this.address = address;
+  }
+
+  public String toString() {
+    return "Person: " + first + " " + last + " " + address;
+  }
+
+  public static class NullPerson extends Person implements Null {
+
+    private NullPerson() {
+      super("None", "None", "None");
     }
 
     public String toString() {
-        return "Person: " + first + " " + last + " " + address;
+      return "NullPerson";
     }
+  }
 
-    public static class NullPerson extends Person implements Null {
-        private NullPerson() {
-            super("None", "None", "None");
-        }
+  public static final Person NULL = new NullPerson();
 
-        public String toString() {
-            return "NullPerson";
-        }
-    }
-
-    public static final Person NULL = new NullPerson();
-
-    public static void main(String[] args) {
-        Person person1 = new Person("a", "b", "c");
-    }
+  public static void main(String[] args) {
+    Person person1 = new Person("a", "b", "c");
+  }
 }
 
 class Position {
-    private String title;
-    private Person person;
 
-    public Position(String jobTitle, Person employee) {
-        title = jobTitle;
-        person = employee;
-        if (person == null) {
-            person = Person.NULL;
-        }
-    }
+  private String title;
+  private Person person;
 
-    public Position(String jobTitle) {
-        title = jobTitle;
-        person = Person.NULL;
+  public Position(String jobTitle, Person employee) {
+    title = jobTitle;
+    person = employee;
+    if (person == null) {
+      person = Person.NULL;
     }
+  }
 
-    public String getTitle() {
-        return title;
-    }
+  public Position(String jobTitle) {
+    title = jobTitle;
+    person = Person.NULL;
+  }
 
-    public void setTitle(String newTitle) {
-        title = newTitle;
-    }
+  public String getTitle() {
+    return title;
+  }
 
-    public Person getPerson() {
-        return person;
-    }
+  public void setTitle(String newTitle) {
+    title = newTitle;
+  }
 
-    public void setPerson(Person newPerson) {
-        person = newPerson;
-        if (person == null) {
-            person = Person.NULL;
-        }
-    }
+  public Person getPerson() {
+    return person;
+  }
 
-    public String toString() {
-        return "Position: " + title + " " + person;
+  public void setPerson(Person newPerson) {
+    person = newPerson;
+    if (person == null) {
+      person = Person.NULL;
     }
+  }
+
+  public String toString() {
+    return "Position: " + title + " " + person;
+  }
 }

@@ -5,24 +5,22 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * ·ºÐÍÊý×é£¬Ò»°ã²»ÓÃ£¬×îºÃ»¹ÊÇÓÃ·ºÐÍÈÝÆ÷°É
- * javaµÄÊý×é²¢Ã»ÓÐ·ºÐÍ
- * 2015.9.1
+ * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½é£¬Ò»ï¿½ã²»ï¿½Ã£ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½Ã·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ javaï¿½ï¿½ï¿½ï¿½ï¿½é²¢Ã»ï¿½Ð·ï¿½ï¿½ï¿½ 2015.9.1
  */
 public class ArrayOfGenerics {
 
-    @SuppressWarnings("unchecked")
-    public static void main(String[] args) {
-        List<String>[] ls;
-        List[] la = new List[10];
-        ls = la;
-        ls[0] = new ArrayList<>();
-        Object[] objects = ls;
-        objects[1] = new ArrayList<Integer>();
-        List<BerylliumSphere>[] spheres = new List[10];
-        for (int i = 0; i < spheres.length; i++) {
-            spheres[i] = new ArrayList<>();
-        }
-        System.out.println(Arrays.toString(spheres));
+  @SuppressWarnings("unchecked")
+  public static void main(String[] args) {
+    List<String>[] ls;
+    List[] la = new List[10];
+    ls = la;
+    ls[0] = new ArrayList<>();
+    Object[] objects = ls;
+    objects[1] = new ArrayList<Integer>();
+    List<BerylliumSphere>[] spheres = new List[10];
+    for (int i = 0; i < spheres.length; i++) {
+      spheres[i] = new ArrayList<>();
     }
+    System.out.println(Arrays.toString(spheres));
+  }
 }

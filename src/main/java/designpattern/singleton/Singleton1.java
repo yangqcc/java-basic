@@ -1,5 +1,8 @@
 package designpattern.singleton;
 
+/**
+ * @author yangqc
+ */
 public class Singleton1 {
 
     /**
@@ -14,9 +17,7 @@ public class Singleton1 {
     }
 
     /**
-     * 静态工程方法，创建实例,该方法为同步方法,为了避免多线程
-     * 请求时出现问题,但是效率比较低,初始化只有一次,初始化完成后
-     * 大部分请求时,instance已经被赋值
+     * 静态工程方法，创建实例,该方法为同步方法,为了避免多线程 请求时出现问题,但是效率比较低,初始化只有一次,初始化完成后 大部分请求时,instance已经被赋值
      */
     public static synchronized Singleton1 getInstance() {
         if (instance == null) {
@@ -27,8 +28,6 @@ public class Singleton1 {
 
     /**
      * getInstance改进版
-     *
-     * @return
      */
     public static Singleton1 getInstance2() {
         if (instance == null) {
