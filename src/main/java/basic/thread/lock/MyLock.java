@@ -1,5 +1,7 @@
 package basic.thread.lock;
 
+import java.util.concurrent.locks.ReentrantLock;
+
 public class MyLock {
 	private volatile boolean flag = false;
 	private Thread currentThread;

@@ -1,8 +1,7 @@
 package basic.spi;
 
-import org.junit.Test;
-
 import java.util.ServiceLoader;
+import org.junit.jupiter.api.Test;
 
 /**
  * <p>title:</p>

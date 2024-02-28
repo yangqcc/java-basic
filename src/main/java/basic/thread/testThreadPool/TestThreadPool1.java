@@ -7,25 +7,22 @@ public class TestThreadPool1 {
 	volatile static int i = 0;
 
 	public static void main(String[] args) {
-		Runnable task = new Runnable() {
-			@Override
-			public void run() {
-				while (true) {
-					try {
-						if (Thread.interrupted()) {
-							System.out.println("interrupted!");
-						}
-						if (i++ == 10000) {
-							break;
-						}
-						Thread.sleep(1000);
-						System.out.println("xixi");
-					} catch (InterruptedException e) {
-						System.out.println("�ұ��ж���");
-					}
-				}
-			}
-		};
+		Runnable task = () -> {
+      while (true) {
+        try {
+          if (Thread.interrupted()) {
+            System.out.println("interrupted!");
+          }
+          if (i++ == 10000) {
+            break;
+          }
+          Thread.sleep(1000);
+          System.out.println("xixi");
+        } catch (InterruptedException e) {
+          System.out.println("�ұ��ж���");
+        }
+      }
+    };
 
 		ExecutorService exec = Executors.newCachedThreadPool();
 		exec.execute(task);
